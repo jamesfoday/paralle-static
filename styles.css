@@ -1,0 +1,50 @@
+/* Container for all embeds with a single-column layout by default */
+.grid-container {
+    display: flex;
+    flex-direction: column; /* Single column by default */
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px; /* Restrict width for single-column layout */
+ }
+ 
+ /* Individual embed container */
+ .embed-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background with slight opacity */
+    border: 2px solid #A5CD39; /* Green border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ /* Inner wrapper to limit height and enable scroll */
+ .embed-wrapper {
+    width: 100%;
+    max-height: 400px; /* Strict height limit */
+    overflow-y: auto;
+ }
+ 
+ /* Limit the blockquote height */
+ .embed-wrapper blockquote.instagram-media {
+    max-height: 100%; /* Enforce max height */
+ }
+ 
+ /* Grid layout on larger screens */
+ @media (min-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+        gap: 20px;
+        max-width: 1200px; /* Expand max width for grid layout */
+    }
+ 
+    .embed-container {
+        max-height: 550px; /* Increased height for larger screens */
+    }
+ }
